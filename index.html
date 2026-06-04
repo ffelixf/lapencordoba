@@ -177,7 +177,7 @@
         .layout {
             width: min(1260px, 100%);
             display: grid;
-            grid-template-columns: minmax(540px, 1fr) minmax(360px, 460px);
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
             gap: 28px;
             align-items: start;
         }
@@ -191,6 +191,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-width: 0;
         }
 
         /* Contenedor principal con perspectiva 3D */
@@ -202,6 +203,7 @@
             justify-content: center;
             align-items: center;
             scale: 0.85; /* Ajuste fino del tamaño en pantalla */
+            transform-origin: top center;
         }
 
         /* Estructura de la Cruz (Lienzo) */
@@ -623,6 +625,7 @@
             color: #1d1f23;
             position: sticky;
             top: 12px;
+            min-width: 0;
         }
 
         .step-content h3 {
@@ -697,6 +700,25 @@
 
             .step-content {
                 position: static;
+            }
+
+            .cross-panel {
+                width: 100%;
+            }
+
+            .scene {
+                width: min(600px, 100%);
+                height: auto;
+                aspect-ratio: 3 / 4;
+                scale: 1;
+                max-width: 600px;
+            }
+
+            .cross-container {
+                width: 100%;
+                max-width: 600px;
+                aspect-ratio: 3 / 4;
+                height: auto;
             }
         }
 
@@ -779,7 +801,54 @@
             .footer-note {
                 font-size: 13px;
             }
+
+            .scene {
+                width: 100%;
+                max-width: 520px;
+                aspect-ratio: 3 / 4;
+                scale: 1;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .cross-container {
+                width: 100%;
+                max-width: 520px;
+                height: auto;
+                aspect-ratio: 3 / 4;
+            }
+
+            .cross-panel {
+                padding: 10px 10px 14px;
+            }
+
+            .controls {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .btn-control {
+                flex: 1 1 140px;
+            }
+
+            .step-indicator {
+                width: 100%;
+                order: -1;
+                min-width: 0;
+                padding: 4px 0 8px;
+            }
+
+            .step-content {
+                padding: 16px;
+            }
+
+            .page-header,
+            .page-footer,
+            .intro-card {
+                border-radius: 14px;
+            }
         }
+                <h1 class="intro-title">Cómo aconsejar a un niño que recibió a Jesús como Salvador</h1>
     </style>
 </head>
 <body>
@@ -791,35 +860,38 @@
             </div>
 
             <p class="intro-lead">El nino necesita la atencion personalizada en el momento inmediato de haber tomado la decision de recibir a Cristo como Salvador.</p>
+            <p class="intro-lead">El niño necesita la atención personalizada en el momento inmediato de haber tomado la decisión de recibir a Cristo como Salvador.</p>
             <p class="intro-lead">Es un tiempo valioso que permite al consejero:</p>
 
             <ul class="intro-list">
                 <li>Saber si entendio del mensaje.</li>
-                <li>Estar al tanto de que respuesta y decisiones tomo.</li>
-                <li>Aclarar dudas y conceptos basicos.</li>
+                <li>Saber si entendió el mensaje.</li>
+                <li>Estar al tanto de qué respuesta y decisiones tomó.</li>
+                <li>Aclarar dudas y conceptos básicos.</li>
                 <li>Fundamentar su fe en la Palabra de Dios.</li>
-                <li>Aconsejarle en relacion con su nueva vida.</li>
+                <li>Aconsejarle en relación con su nueva vida.</li>
             </ul>
 
-            <h3>Como hacerlo</h3>
+            <h3>Cómo hacerlo</h3>
             <ul class="intro-list">
-                <li>Acerquese al nino e inicie una conversacion informal y amistosa. Pregunte nombre, edad y grado escolar. Llamelo siempre por su nombre.</li>
-                <li>Confie que es el Espiritu Santo el que convence de pecado y que la Palabra trabaja en el corazon.</li>
-                <li>Use preguntas abiertas para generar dialogo y descubrir si entendio, si tiene dudas y si ha tomado la decision.</li>
+                <li>Acérquese al niño e inicie una conversación informal y amistosa. Pregunte nombre, edad y grado escolar. Llámelo siempre por su nombre.</li>
+                <li>Confíe que es el Espíritu Santo el que convence de pecado y que la Palabra trabaja en el corazón.</li>
+                <li>Use preguntas abiertas para generar diálogo y descubrir si entendió, si tiene dudas y si ha tomado la decisión.</li>
             </ul>
 
             <p><strong>Ejemplos de preguntas:</strong></p>
             <ul class="intro-questions">
-                <li>Por que Dios mando a su Hijo?</li>
-                <li>Que hizo Jesus por ti? Por que tuvo que hacerlo?</li>
-                <li>Que da Dios a aquellos que creen en El?</li>
-                <li>Le dijiste a Dios que crees en Jesus?</li>
+                <li>¿Por qué Dios mandó a su Hijo?</li>
+                <li>¿Qué hizo Jesús por ti? ¿Por qué tuvo que hacerlo?</li>
+                <li>¿Qué da Dios a aquellos que creen en Él?</li>
+                <li>¿Le dijiste a Dios que crees en Jesús?</li>
             </ul>
 
             <ul class="intro-list">
                 <li>Refuerce sencilla y brevemente los conceptos necesarios.</li>
-                <li>Entregue EL REGALO DE DIOS PARA MI.</li>
+                <li>Entregue “EL REGALO DE DIOS PARA MÍ”.</li>
             </ul>
+                <p>Guía visual e interactiva para acompañar la consejería infantil paso a paso.</p>
 
             <div class="intro-actions">
                 <button class="btn-start" id="startResourceBtn">Comenzar recurso</button>
@@ -830,9 +902,11 @@
             <div class="footer-brand">
                 <img src="logo_Lapen_original2.png" alt="Logo Lapen" class="footer-logo">
                 <span>LAPENCORDOBA</span>
+                <span>LAPEN CÓRDOBA</span>
             </div>
             <div class="footer-note">Recurso creado sobre una idea del Pastor Ernesto Lerch</div>
         </footer>
+                    <p>Guía visual e interactiva para acompañar la consejería infantil paso a paso.</p>
     </section>
 
     <div class="page-shell hidden" id="resourceApp">
@@ -876,6 +950,7 @@
             <div class="footer-brand">
                 <img src="logo_Lapen_original2.png" alt="Logo Lapen" class="footer-logo">
                 <span>LAPENCORDOBA</span>
+                <span>LAPEN CÓRDOBA</span>
             </div>
             <div class="footer-note">Recurso creado sobre una idea del Pastor Ernesto Lerch</div>
         </footer>
@@ -895,19 +970,20 @@
         let currentStep = 1;
 
         const ANIMATION_TOTAL_MS = 1700;
-            const TOTAL_STEPS = 7;
+        const ANIMATION_TOTAL_MS = 1700;
+        const TOTAL_STEPS = 7;
 
         const stepInfo = {
             1: {
                 title: 'Paso 1. Muestre el regalo (Cruz plegada)',
-                text: 'Este regalo puede ser para vos. Pregunta al niño su nombre y, si quieres, puedes anotarlo bajo el moño. Si has creído que Jesús murió por tus pecados, el regalo de Dios para ti es la vida eterna.',
+                text: 'Este regalo puede ser para vos. Pregunte al niño su nombre y, si desea, puede anotarlo bajo el moño. Si has creído que Jesús murió por tus pecados, el regalo de Dios para ti es la vida eterna.',
                 phrase: 'Idea clave: El regalo de Dios para mí.',
                 verse: 'Juan 3:16'
             },
             2: {
                 title: 'Paso 2. Despliegue la cruz',
-                text: 'Haz leer al niño: YO RECIBI A JESUS. Explícale que al recibir a Jesús, el Espíritu Santo viene a vivir con nosotros para enseñar y ayudar a hacer lo correcto.',
-                phrase: 'Frase del cuadro: YO RECIBI A JESUS',
+                text: 'Haga leer al niño: YO RECIBÍ A JESÚS. Explíquele que al recibir a Jesús, el Espíritu Santo viene a vivir con nosotros para enseñar y ayudar a hacer lo correcto.',
+                phrase: 'Frase del cuadro: YO RECIBÍ A JESÚS',
                 verse: 'Efesios 1:13'
             },
             3: {
@@ -918,28 +994,28 @@
             },
             4: {
                 title: 'Paso 4. Pliegue el cuadro izquierdo hacia adelante',
-                text: 'Se leerá: ME HIZO SU HIJO. Lee con el niño Juan 1:12 y recuérdale que, al creer y recibir a Jesús, Dios le dio el derecho de ser llamado hijo de Dios.',
+                text: 'Se leerá: ME HIZO SU HIJO. Lea con el niño Juan 1:12 y recuérdele que, al creer y recibir a Jesús, Dios le dio el derecho de ser llamado hijo de Dios.',
                 phrase: 'Frase del cuadro: ME HIZO SU HIJO',
                 verse: 'Juan 1:12',
                 optional: 'Opcional: si vuelve a pecar, sigue siendo hijo de Dios. Debe confesar su pecado y Dios perdona y limpia. (1 Juan 1:9)'
             },
             5: {
                 title: 'Paso 5. Pliegue el cuadro derecho hacia adelante',
-                text: 'Se leerá: SIEMPRE ME PROTEGERA. Recuérdale que Dios le cuida siempre. Puedes mover ambos cuadros simulando un abrazo para mostrar seguridad en sus brazos.',
-                phrase: 'Frase del cuadro: SIEMPRE ME PROTEGERA',
+                text: 'Se leerá: SIEMPRE ME PROTEGERÁ. Recuérdele que Dios le cuida siempre. Puede mover ambos cuadros simulando un abrazo para mostrar seguridad en sus brazos.',
+                phrase: 'Frase del cuadro: SIEMPRE ME PROTEGERÁ',
                 verse: 'Hebreos 13:5b-6'
             },
             6: {
                 title: 'Paso 6. Pliegue el cuadro superior hacia adelante',
-                text: 'Se leerá: PUEDO CONTARLO A OTROS. Anima al niño a compartir con amigos y familia que Dios también les ofrece este regalo.',
+                text: 'Se leerá: PUEDO CONTARLO A OTROS. Anime al niño a compartir con amigos y familia que Dios también les ofrece este regalo.',
                 phrase: 'Frase del cuadro: PUEDO CONTARLO A OTROS',
                 verse: 'Mateo 28:19-20'
-                },
-                7: {
-                    title: 'Paso 7. Reiniciar',
-                    text: 'Desde el estado final, la cruz se repliega nuevamente hasta mostrar solo el regalo. Al terminar la animación, vuelve automáticamente al Paso 1 para comenzar otra vez.',
-                    phrase: 'Acción: Volver al regalo inicial',
-                    verse: 'Reinicio del recurso'
+            },
+            7: {
+                title: 'Paso 7. Reiniciar',
+                text: 'Desde el estado final, la cruz se repliega nuevamente hasta mostrar solo el regalo. Al terminar la animación, vuelve automáticamente al Paso 1 para comenzar otra vez.',
+                phrase: 'Acción: Volver al regalo inicial',
+                verse: 'Reinicio del recurso'
             }
         };
 
@@ -1001,9 +1077,9 @@
                 scene.classList.add('final-single');
             }
 
-                if (targetStep === 7) {
-                    scene.classList.add('folded');
-                }
+            if (targetStep === 7) {
+                scene.classList.add('folded');
+            }
 
             currentStep = targetStep;
             updateControls();
@@ -1011,9 +1087,9 @@
             setTimeout(() => {
                 isAnimating = false;
 
-                    if (targetStep === 7) {
-                        currentStep = 1;
-                    }
+                if (targetStep === 7) {
+                    currentStep = 1;
+                }
 
                 updateControls();
             }, ANIMATION_TOTAL_MS);
