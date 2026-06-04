@@ -110,9 +110,7 @@
     }
 
     .main {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
+      display: block;
       margin-top: 16px;
     }
 
@@ -211,32 +209,6 @@
       border: 1px solid rgba(111, 27, 33, 0.12);
     }
 
-    .side {
-      display: grid;
-      gap: 14px;
-    }
-
-    .note {
-      padding: 20px;
-    }
-
-    .note h2 {
-      margin: 0;
-      font-size: 1.15rem;
-      color: var(--brand-dark);
-    }
-
-    .note p, .note li {
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 0.95rem;
-    }
-
-    .note ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
-    }
-
     .footer {
       margin-top: 16px;
       background: var(--surface);
@@ -269,19 +241,6 @@
     .footer small {
       color: var(--muted);
       line-height: 1.4;
-    }
-
-    .fine-print {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    @media (max-width: 960px) {
-      .main {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 720px) {
@@ -369,7 +328,7 @@
             <div class="card-action">Ver video</div>
           </a>
 
-          <a class="card-link" href="https://ffelixf.github.io/lapencordoba/" target="_blank" rel="noopener noreferrer">
+          <a class="card-link" href="./animacioncruz.html" target="_blank" rel="noopener noreferrer">
             <div class="card-icon">CRZ</div>
             <div class="card-body">
               <h3>Animación interactiva de la cruz</h3>
@@ -379,24 +338,6 @@
           </a>
         </div>
       </section>
-
-      <aside class="side">
-        <section class="panel note">
-          <h2>Recomendación para el QR</h2>
-          <p>Haz que el QR apunte solo a esta página principal. Desde aquí cada persona elige el recurso que necesita, sin mezclar los enlaces en una sola tarjeta.</p>
-          <ul>
-            <li>Útil para celular y tablet.</li>
-            <li>Más claro para la audiencia del curso.</li>
-            <li>Permite actualizar enlaces sin cambiar el QR si mantienes esta página.</li>
-          </ul>
-          <div class="fine-print">Si más adelante cambias el PDF o el video, solo actualizas los enlaces aquí y el QR sigue sirviendo.</div>
-        </section>
-
-        <section class="panel note">
-          <h2>Acceso institucional</h2>
-          <p>Este portal mantiene el estilo visual de Lapen Córdoba y centraliza el acceso a los recursos de capacitación en un solo lugar.</p>
-        </section>
-      </aside>
     </main>
 
     <footer class="footer">
